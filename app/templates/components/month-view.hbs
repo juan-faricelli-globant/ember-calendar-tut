@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>Sun</td>
+      <td>Mon</td>
+      <td>Tues</td>
+      <td>Wed</td>
+      <td>Thur</td>
+      <td>Fri</td>
+      <td>Sat</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each weeks as |week|}}
+       <tr>
+         {{#each week as |day|}}
+            {{calendar-cell day=day markDay=(action 'markDay') }}
+         {{/each}}
+       </tr>
+    {{/each}}
+  </tbody>
+</table>

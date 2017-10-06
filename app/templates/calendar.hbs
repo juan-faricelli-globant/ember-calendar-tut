@@ -1,1 +1,14 @@
 {{outlet}}
+
+{{#link-to 'calendars'}}
+  <button type="button" class="btn" name="button">Back</button>
+{{/link-to}}
+
+<h1> {{model.name}} </h1>
+
+<div class="">
+  <h2>{{monthName}}</h2>
+
+  {{ month-view days=model.days }}
+
+</div>
