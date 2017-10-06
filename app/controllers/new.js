@@ -10,11 +10,11 @@ export default Ember.Controller.extend({
 
       newCalendar.save().then(
         () => {
-          this.get('model').deleteRecord();
           this.setProperties({name: '', notes: ''});
+          this.get('model').deleteRecord();
           this.transitionToRoute('calendars');
         },
-        () => console.log('model did not save')
+        // () => console.log('model did not save')
       );
     },
     cancel() {

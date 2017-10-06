@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import DS from 'ember-data';
+/* global moment */
 
 function getValue(days, dayObj) {
   let day = days.filter(day => day.get('date') === dayObj.date)[0];
@@ -11,6 +12,7 @@ function getValue(days, dayObj) {
 
 export default Ember.Component.extend({
   weeks: Ember.computed('days', function() {
+    console.log(this.get('days'));
     return DS.PromiseArray.create({
       promise: this.get('days').then(function(days) {
         let day = moment().date(1),
@@ -38,7 +40,7 @@ export default Ember.Component.extend({
 
           weeks.push(week);
         }
-
+        console.log(weeks);
         return weeks;
       })
     });

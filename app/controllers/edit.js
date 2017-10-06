@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 
           this.transitionToRoute('calendars');
         },
-        () => console.log('model did not update')
+        // () => console.warn('model did not update')
       );
     },
     delete(calendarId) {
@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
           calendar.destroyRecord();
           this.transitionToRoute('calendars');
         },
-        () => console.log('model did not destroy')
+        // () => console.warn('model did not destroy')
       );
     },
     cancel() {

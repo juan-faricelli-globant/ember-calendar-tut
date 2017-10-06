@@ -1,7 +1,9 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
+import { belongsTo } from 'ember-data/relationships';
 
-export default DS.Model.extend({
-  date: DS.attr('string'),
-  value: DS.attr('boolean', { defaultValue: false }),
-  calendar: DS.belongsTo('calendar')
+export default Model.extend({
+  date: attr('string'),
+  value: attr('boolean', { defaultValue: false }),
+  calendar: belongsTo('calendar')
 });
