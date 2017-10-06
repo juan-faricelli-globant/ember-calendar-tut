@@ -1,0 +1,30 @@
+{{outlet}}
+
+<h1>Calendars</h1>
+
+<div class="toolbar">
+  {{#link-to 'new'}}
+    <button type="button" name="button" class="btn">
+      Create Calendar
+    </button>
+  {{/link-to}}
+</div>
+
+<ul class="cal-list">
+  {{#each sortedCalendars as |cal|}}
+    <li>
+      {{#link-to 'calendar' cal}}
+        <span class="name">{{cal.name}}</span>
+        <span class="notes">{{cal.notes}}</span>
+        <span class="streak"> X days</span>
+        <span class="streak">
+          {{#link-to 'edit' cal class='btn'}}
+            <button type="button" name="button" class="btn">
+              Edit
+            </button>
+          {{/link-to}}
+        </span>
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>

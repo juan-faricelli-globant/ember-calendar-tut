@@ -5,6 +5,19 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ember-stretch',
     environment,
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+    firebase: {
+      apiKey: "AIzaSyCJxEmdvbGl-yp4Fux8IILSpIQyw7W25m8",
+      authDomain: "ember-calendar-tut.firebaseapp.com",
+      databaseURL: "https://ember-calendar-tut.firebaseio.com",
+      projectId: "ember-calendar-tut",
+      storageBucket: "ember-calendar-tut.appspot.com",
+      messagingSenderId: "996583724239"
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
